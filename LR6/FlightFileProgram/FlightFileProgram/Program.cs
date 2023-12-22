@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
@@ -16,13 +16,13 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("Choose one of the next options:");
-            Console.WriteLine("1.Return all flights operated by a particular airline");
-            Console.WriteLine("2.Return all flights that are currently delayed");
-            Console.WriteLine("3.Return all flights that depart on a particular day");
-            Console.WriteLine("4.Return all flights that depart and arrive in the specified time period");
-            Console.WriteLine("5.Return all flights that arrived in the last hour or in the specified time period");
-            Console.WriteLine("6.Exit the program");
+            Console.WriteLine("Выберите один из следующих вариантов:");
+            Console.WriteLine("1.Показать все рейсы, выполняемые конкретной авиакомпанией");
+            Console.WriteLine("2.Показать все рейсы, которые в настоящее время задерживаются");
+            Console.WriteLine("3.Показать все рейсы, вылетающие в определенный день");
+            Console.WriteLine("4.Показать все рейсы, которые отправляются и прибывают в указанный период времени");
+            Console.WriteLine("5.Показать все рейсы, прибывшие за последний час или в указанный период времени");
+            Console.WriteLine("6.Выйти из программы");
 
             int option = Convert.ToInt32(Console.ReadLine());
 
@@ -30,24 +30,24 @@ class Program
             {
                 case 1:
                     var airlines = flightSystem.GetAirlines();
-                    Console.WriteLine("Available airlines:");
+                    Console.WriteLine("Доступные авиакомпании:");
                     foreach (var airline1 in airlines)
                     {
                         Console.WriteLine(airline1);
                     }
-                    Console.Write("Enter the name of the airline: ");
+                    Console.Write("Введите название авиакомпании: ");
                     string airline = Console.ReadLine();
                     var flightsByAirline = flightSystem.GetFlightsByAirline(airline);
                     if (flightsByAirline.Count == 0)
                     {
-                        Console.WriteLine("No flights found for this airline.");
+                        Console.WriteLine("Рейсов этой авиакомпании не найдено.");
                     }
                     else
                     {
-                        Console.WriteLine("Flights by " + airline + ":");
+                        Console.WriteLine("Рейсы по " + airline + ":");
                         foreach (var flight in flightsByAirline)
                         {
-                            Console.WriteLine(flight.FlightNumber + " Departure Time: " + flight.DepartureTime);
+                            Console.WriteLine(flight.FlightNumber + " Время отправления: " + flight.DepartureTime);
                         }
                     }
                     break;
@@ -55,55 +55,55 @@ class Program
                     var delayedFlights = flightSystem.GetDelayedFlights();
                     if (delayedFlights.Count == 0)
                     {
-                        Console.WriteLine("No delayed flights found.");
+                        Console.WriteLine("Задержанных рейсов не обнаружено.");
                     }
                     else
                     {
-                        Console.WriteLine("Delayed flights:");
+                        Console.WriteLine("Задержанные рейсы:");
                         foreach (var flight in delayedFlights)
                         {
-                            Console.WriteLine(flight.FlightNumber + " Delayed Time: " + flight.DepartureTime);
+                            Console.WriteLine(flight.FlightNumber + " Время задержки: " + flight.DepartureTime);
                         }
                     }
                     break;
                 case 3:
-                    Console.Write("Enter the date (format: year-month-day): ");
+                    Console.Write("Введите дату (format: year-month-day): ");
                     DateTime date = DateTime.Parse(Console.ReadLine());
                     var flightsOnDate = flightSystem.GetFlightsOnDate(date);
                     if (flightsOnDate.Count == 0)
                     {
-                        Console.WriteLine("No flights found on this date.");
+                        Console.WriteLine("На эту дату рейсов не найдено.");
                     }
                     else
                     {
-                        Console.WriteLine("Flights on " + date.ToString("yyyy-MM-dd") + ":");
+                        Console.WriteLine("Рейсы на " + date.ToString("yyyy-MM-dd") + ":");
                         foreach (var flight in flightsOnDate)
                         {
-                            Console.WriteLine(flight.FlightNumber + " Departure Time: " + flight.DepartureTime);
+                            Console.WriteLine(flight.FlightNumber + " Время отправления: " + flight.DepartureTime);
                         }
                     }
                     break;
                 case 4:
-                    Console.Write("Enter the starting time (format: year-month-day-hours:minutes:seconds): ");
+                    Console.Write("Введите время начала (format: year-month-day-hours:minutes:seconds): ");
                     DateTime startTime = DateTime.Parse(Console.ReadLine());
-                    Console.Write("Enter the end time (format: year-month-day-hours:minutes:seconds): ");
+                    Console.Write("Введите время окончания (format: year-month-day-hours:minutes:seconds): ");
                     DateTime endTime = DateTime.Parse(Console.ReadLine());
                     var flightsInTimeRange = flightSystem.GetFlightsInTimeRange(startTime, endTime);
                     if (flightsInTimeRange.Count == 0)
                     {
-                        Console.WriteLine("No flights found in this time range.");
+                        Console.WriteLine("В этом временном диапазоне рейсов не найдено.");
                     }
                     else
                     {
-                        Console.WriteLine("Flights from " + startTime.ToString("yyyy-MM-ddTHH:mm:ss") + " to " + endTime.ToString("yyyy-MM-ddTHH:mm:ss") + ":");
+                        Console.WriteLine("Рейсы с " + startTime.ToString("yyyy-MM-ddTHH:mm:ss") + " до " + endTime.ToString("yyyy-MM-ddTHH:mm:ss") + ":");
                         foreach (var flight in flightsInTimeRange)
                         {
-                            Console.WriteLine(flight.FlightNumber + " Departure Time: " + flight.DepartureTime);
+                            Console.WriteLine(flight.FlightNumber + " Время отправления: " + flight.DepartureTime);
                         }
                     }
                     break;
                 case 5:
-                    Console.Write("Return all flights that arrived in the last hour or in the specified time period (1/2)? ");
+                    Console.Write("Показать все рейсы, прибывшие за последний час или за указанный период времени (1/2)? ");
                     string useLastHour = Console.ReadLine();
                     List<Flight> flightsInLastHourOrTimeRange;
                     if (useLastHour.ToLower() == "1")
@@ -113,34 +113,34 @@ class Program
                         flightsInLastHourOrTimeRange = flightSystem.GetFlightsInTimeRange(oneHourAgo, currentTime);
                         if (flightsInLastHourOrTimeRange.Count == 0)
                         {
-                            Console.WriteLine("No flights arrived in the last hour.");
+                            Console.WriteLine("За последний час ни одного рейса не прибыло.");
                         }
                         else
                         {
-                            Console.WriteLine("Flights that arrived in the last hour:");
+                            Console.WriteLine("Рейсы, прибывшие за последний час:");
                             foreach (var flight in flightsInLastHourOrTimeRange)
                             {
-                                Console.WriteLine(flight.FlightNumber + " Arrival Time: " + flight.ArrivalTime);
+                                Console.WriteLine(flight.FlightNumber + " Время прибытия: " + flight.ArrivalTime);
                             }
                         }
                     }
                     else
                     {
-                        Console.Write("Enter the start time (format: year-month-day-hours:minutes:seconds): ");
+                        Console.Write("Введите время начала (format: year-month-day-hours:minutes:seconds): ");
                         DateTime startRange = DateTime.Parse(Console.ReadLine());
-                        Console.Write("Enter the end time (format: year-month-day-hours:minutes:seconds): ");
+                        Console.Write("Введите время окончания (format: year-month-day-hours:minutes:seconds): ");
                         DateTime endRange = DateTime.Parse(Console.ReadLine());
                         flightsInLastHourOrTimeRange = flightSystem.GetFlightsInTimeRange(startRange, endRange);
                         if (flightsInLastHourOrTimeRange.Count == 0)
                         {
-                            Console.WriteLine("No flights found in this time range.");
+                            Console.WriteLine("В этом временном диапазоне рейсов не найдено.");
                         }
                         else
                         {
-                            Console.WriteLine("Flights from " + startRange.ToString("yyyy-MM-ddTHH:mm:ss") + " to " + endRange.ToString("yyyy-MM-ddTHH:mm:ss") + ":");
+                            Console.WriteLine("Рейсы с " + startRange.ToString("yyyy-MM-ddTHH:mm:ss") + " до " + endRange.ToString("yyyy-MM-ddTHH:mm:ss") + ":");
                             foreach (var flight in flightsInLastHourOrTimeRange)
                             {
-                                Console.WriteLine(flight.FlightNumber + " Arrival Time: " + flight.ArrivalTime);
+                                Console.WriteLine(flight.FlightNumber + " Время прибытия: " + flight.ArrivalTime);
                             }
                         }
                     }
@@ -149,7 +149,7 @@ class Program
                 case 6:
                     return;
                 default:
-                    Console.WriteLine("Unknown option. Please try again.");
+                    Console.WriteLine("Неизвестный вариант. Пожалуйста, попробуйте еще раз.");
                     break;
             }
 
@@ -208,24 +208,24 @@ class Program
             }
             catch (JsonReaderException ex)
             {
-                Console.WriteLine("Error while reading: " + ex.Message);
+                Console.WriteLine("Ошибка при чтении: " + ex.Message);
             }
             catch (JsonSerializationException ex)
             {
-                Console.WriteLine("Error while deserialization: " + ex.Message);
+                Console.WriteLine("Ошибка при десериализации: " + ex.Message);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Unknown error: " + ex.Message);
+                Console.WriteLine("Неизвестная ошибка: " + ex.Message);
             }
         }
         public void ProcessRequest(Func<Flight, bool> query)
         {
             var result = flights.Where(query).ToList();
-            Console.WriteLine($"Number of flights matching the query: {result.Count}");
+            Console.WriteLine($"Количество рейсов, соответствующих запросу: {result.Count}");
             string jsonResult = JsonConvert.SerializeObject(result);
             File.WriteAllText("queryResult.json", jsonResult);
-            Console.WriteLine("The result has been written to 'queryResult.json'");
+            Console.WriteLine("Результат записан в 'queryResult.json'");
         }
         public void UpdateFlightStatus()
         {
