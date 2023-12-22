@@ -1,0 +1,17 @@
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.GeneratedMSBuildEditorConfig.editorconfig
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.AssemblyInfoInputs.cache
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.AssemblyInfo.cs
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.csproj.CoreCompileInputs.cache
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\bin\Debug\net8.0\FlightFileProgram.exe
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\bin\Debug\net8.0\FlightFileProgram.deps.json
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\bin\Debug\net8.0\FlightFileProgram.runtimeconfig.json
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\bin\Debug\net8.0\FlightFileProgram.dll
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\bin\Debug\net8.0\FlightFileProgram.pdb
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.csproj.AssemblyReference.cache
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.csproj.CopyComplete
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.dll
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\refint\FlightFileProgram.dll
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.pdb
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\FlightFileProgram.genruntimeconfig.cache
+D:\Object Oriented Programming\LR6\FlightFileProgram\FlightFileProgram\obj\Debug\net8.0\ref\FlightFileProgram.dll
