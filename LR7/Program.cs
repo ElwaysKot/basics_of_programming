@@ -43,7 +43,7 @@ public class ReservationManager
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error");
+            Console.WriteLine("Error: " + ex.Message);
         }
     }
 
@@ -69,7 +69,7 @@ public class ReservationManager
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error");
+            Console.WriteLine("Error: " + ex.Message);
         }
     }
 
@@ -93,7 +93,7 @@ public class ReservationManager
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error");
+            Console.WriteLine("Error: " + ex.Message);
             return new List<string>();
         }
     }
@@ -142,7 +142,7 @@ public class ReservationManager
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error");
+            Console.WriteLine("Error: " + ex.Message);
         }
     }
 
@@ -163,7 +163,7 @@ public class ReservationManager
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error");
+            Console.WriteLine("Error: " + ex.Message);
             return 0;
         }
     }
@@ -172,8 +172,8 @@ public class ReservationManager
 // Restaurant Class
 public class Restaurant
 {
-    public string Name; //name
-    public RestaurantTable[] Tables; // tables
+    public string? Name { get; set; } //name
+    public RestaurantTable[] Tables { get; set; } // tables
 }
 
 // Table Class
@@ -202,7 +202,7 @@ public class RestaurantTable
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error");
+            Console.WriteLine("Error: " + ex.Message);
             return false;
         }
     }
