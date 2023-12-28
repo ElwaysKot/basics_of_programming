@@ -126,10 +126,10 @@ public class ReservationManager
                 swapped = false;
                 for (int i = 0; i < restaurants.Count - 1; i++)
                 {
-                    int avTc = AvailableTablesInRestaurantAndDateTime(restaurants[i], date); // available tables current
-                    int avTn = AvailableTablesInRestaurantAndDateTime(restaurants[i + 1], date); // available tables next
+                    int availableTablesCurrent = AvailableTablesInRestaurantAndDateTime(restaurants[i], date); // available tables current
+                    int availableTablesNext = AvailableTablesInRestaurantAndDateTime(restaurants[i + 1], date); // available tables next
 
-                    if (avTc < avTn)
+                    if (availableTablesCurrent < availableTablesNext)
                     {
                         // Swap restaurants
                         var temp = restaurants[i];
